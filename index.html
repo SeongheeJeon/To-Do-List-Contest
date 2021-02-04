@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Momentum2</title>
+  </head>
+  <body>
+    <div class="bgvideo">
+      <video muted autoplay loop>
+        <source src="videos/Candle1.mp4" />
+      </video>
+    </div>
+    <div class="main">
+      <div class="js-clock">
+        <p>00:00:00</p>
+      </div>
+      <p class="js-greeting">반갑습니다</p>
+      <form class="js-form-name">
+        <input type="text" placeholder="이름을 입력해주세요" />
+      </form>
+      <form action="" class="js-form-toDo">
+        <input type="text" placeholder="할 일을 입력하세요" />
+      </form>
+      <ul class="js-toDos"></ul>
+      <button id="deleteAll" onclick="deleteAllEvent()">
+        <img src="images/delete-removebg-preview.png" />
+      </button>
+      <div class="js-weather"></div>
+      <div class="line">
+        <img src="images/spring2-removebg-preview.png" alt="" />
+        <img src="images/spring2-removebg-preview.png" alt="" />
+        <img src="images/spring2-removebg-preview.png" alt="" />
+      </div>
+    </div>
+    <div class="mood">
+      <p>지금 기분이 어떤가요?</p>
+      <div class="btns" onclick="moodClickEvent(event)">
+        <button id="fear"><img src="images/fear.png" alt="" /></button>
+        <button id="sadness"><img src="images/sadness.png" alt="" /></button>
+        <button id="joy"><img src="images/joy.png" alt="" /></button>
+        <button id="disgust"><img src="images/disgust.png" alt="" /></button>
+        <button id="anger"><img src="images/anger.png" alt="" /></button>
+      </div>
+      <div class="text"></div>
+    </div>
+  </body>
+  <script src="js/clock.js"></script>
+  <script src="js/greeting.js"></script>
+  <script src="js/todo.js"></script>
+  <script src="js/bg.js"></script>
+  <script src="js/mood.js"></script>
+  <script type="module" src="js/weather.js"></script>
+</html>
