@@ -40,28 +40,42 @@ input[type="text"]:focus {
 }
 
 input[type="text"]:focus::placeholder {
-  color: #030203;
+  color: transparent;
 }
 
 button {
   background-color: transparent;
 }
+
 /* background video */
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
 .bgvideo {
+  position: fixed;
   z-index: -1;
-  position: absolute;
-  right: 250px;
-  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  animation: fadeIn 0.5s linear;
 }
 .bgvideo video {
-  width: 50%;
-  float: right;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* main */
 
 .main {
+  background-color: #2d384db2;
   width: 450px;
   height: 670px;
   margin: 20px;
@@ -233,27 +247,6 @@ button#deleteAll img.showing {
   transition: opacity 1s 0.5s;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 20%;
-  }
-}
-
-.bgImage {
-  z-index: -2;
-  opacity: 20%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  animation: fadeIn 0.5s linear;
-}
-
 /* line */
 
 .line {
@@ -266,7 +259,7 @@ button#deleteAll img.showing {
 
 .line.showing {
   opacity: 100;
-  transition: all 1s 1.5s;
+  transition: opacity 1s 1.5s;
 }
 
 .line img {
@@ -281,6 +274,7 @@ button#deleteAll img.showing {
   width: 0px;
 }
 .mood.showing {
+  background-color: #2d384db2;
   margin: 20px;
   width: 450px;
   height: 670px;
@@ -299,14 +293,16 @@ button#deleteAll img.showing {
   display: flex;
   flex-flow: row;
   justify-content: center;
+  padding: 40px 0;
 }
+
 .mood button {
   padding: 0;
   margin: 3px;
   display: flex;
   flex-flow: column;
   cursor: pointer;
-  border: 1px solid #030203;
+  border: 1px solid transparent;
 }
 
 .mood button:hover {
@@ -317,11 +313,25 @@ button#deleteAll img.showing {
   height: 85px;
 }
 .mood .text {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
   height: 10px;
   line-height: 26px;
-  padding: 70px 0 130px 0;
+  padding: 70px 0 70px 0;
 }
 .mood .text.showing {
   height: 150px;
   transition: height 0.5s;
+}
+
+/*반응형*/
+
+@media (max-width: 982px) {
+  .line {
+    transform: rotate(90deg);
+    right: 190px;
+    top: 465px;
+  }
 }
