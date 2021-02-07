@@ -9,12 +9,14 @@
 body {
   color: #dde4f3;
   background-color: #030203;
+  min-height: 100vh;
   font-size: 18px;
   font-family: "MapoGoldenPier";
   margin: auto;
   display: flex;
   flex-flow: row wrap;
   text-align: center;
+  align-items: center;
   justify-content: center;
 }
 
@@ -59,14 +61,19 @@ button {
 }
 
 .bgvideo {
-  position: fixed;
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: -1;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
   animation: fadeIn 0.5s linear;
 }
 .bgvideo video {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -77,11 +84,13 @@ button {
 .main {
   background-color: #2d384db2;
   width: 450px;
+  max-width: 95vw;
   height: 670px;
+  max-height: 95vh;
   margin: 20px;
   position: relative;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   justify-content: center;
   border: 1px solid #bdccee;
   border-radius: 50px;
@@ -98,7 +107,7 @@ button {
 
 .js-greeting {
   font-size: 24px;
-  margin: 20px 0 70px 0;
+  margin: 5% 0 15% 0;
 }
 
 .js-form-name {
@@ -177,7 +186,6 @@ button {
   content: "";
   position: absolute;
   background-color: transparent;
-  left: 50px;
   top: 13px;
   width: 10px;
   height: 10px;
@@ -243,6 +251,7 @@ button#deleteAll img.showing {
 }
 
 .js-weather.showing_name {
+  margin-bottom: 10px;
   opacity: 100;
   transition: opacity 1s 0.5s;
 }
@@ -277,6 +286,7 @@ button#deleteAll img.showing {
   background-color: #2d384db2;
   margin: 20px;
   width: 450px;
+  max-width: 95vw;
   height: 670px;
   opacity: 100%;
   display: flex;
@@ -309,8 +319,10 @@ button#deleteAll img.showing {
   border: 1px solid #dde4f3;
 }
 .mood button img {
-  width: 70px;
-  height: 85px;
+  width: 15vw;
+  height: 10vh;
+  max-width: 70px;
+  max-height: 85px;
 }
 .mood .text {
   display: flex;
@@ -333,5 +345,17 @@ button#deleteAll img.showing {
     transform: rotate(90deg);
     right: 190px;
     top: 465px;
+  }
+}
+
+@media (max-width: 500px) {
+  .js-toDos {
+    margin: 30px 45px 20px 10px;
+  }
+}
+
+@media (max-width: 486px) {
+  .line {
+    right: 42%;
   }
 }
