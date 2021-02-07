@@ -115,11 +115,20 @@ button {
 }
 
 .js-form-name.showing_name {
-  display: block;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .js-form-name input {
   width: 160px;
+}
+
+.js-form-name input[type="submit"] {
+  all: unset;
+  cursor: pointer;
+  padding: 10px;
 }
 
 /* form-todo  */
@@ -260,6 +269,7 @@ button#deleteAll img.showing {
 
 .line {
   position: absolute;
+  visibility: hidden;
   display: flex;
   opacity: 0;
   right: -55px;
@@ -267,6 +277,7 @@ button#deleteAll img.showing {
 }
 
 .line.showing {
+  visibility: visible;
   opacity: 100;
   transition: opacity 1s 1.5s;
 }
@@ -281,8 +292,10 @@ button#deleteAll img.showing {
 .mood {
   opacity: 0%;
   width: 0px;
+  visibility: hidden;
 }
 .mood.showing {
+  visibility: visible;
   background-color: #2d384db2;
   margin: 20px;
   width: 450px;
