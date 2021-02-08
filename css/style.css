@@ -127,6 +127,7 @@ button {
 
 .js-form-name input[type="submit"] {
   all: unset;
+  visibility: hidden;
   cursor: pointer;
   padding: 10px;
 }
@@ -292,6 +293,7 @@ button#deleteAll img.showing {
 .mood {
   opacity: 0%;
   width: 0px;
+  height: 0px;
   visibility: hidden;
 }
 .mood.showing {
@@ -364,6 +366,9 @@ button#deleteAll img.showing {
 @media (max-width: 500px) {
   .js-toDos {
     margin: 30px 45px 20px 10px;
+  }
+  .js-form-name input[type="submit"] {
+    visibility: visible;
   }
 }
 
