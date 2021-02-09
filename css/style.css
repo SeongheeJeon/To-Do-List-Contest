@@ -295,10 +295,13 @@ button#deleteAll img.showing {
   width: 0px;
   height: 0px;
   visibility: hidden;
+  position: absolute;
+  top: 0;
 }
 .mood.showing {
   visibility: visible;
   background-color: #2d384db2;
+  position: relative;
   margin: 20px;
   width: 450px;
   max-width: 95vw;
