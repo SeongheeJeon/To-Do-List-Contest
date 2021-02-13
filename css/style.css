@@ -64,7 +64,6 @@ button {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -279,6 +278,7 @@ button#deleteAll img.showing {
 
 .line.showing {
   visibility: visible;
+  z-index: 9;
   opacity: 100;
   transition: opacity 1s 1.5s;
 }
